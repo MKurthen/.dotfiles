@@ -75,8 +75,19 @@ export PATH=$HOME/bin:/usr/local/bin:usr/bin:/bin:$PATH
 export PATH=/usr/local/texlive/2013/bin/x86_64-linux/:$PATH
 
 
-#Variables for Virtualenvwrapper (Python)
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
-source /usr/bin/virtualenvwrapper.sh
+##Variables for Virtualenvwrapper (Python)
+#export WORKON_HOME=$HOME/.virtualenvs
+#export PROJECT_HOME=$HOME/Devel
+#source /usr/bin/virtualenvwrapper.sh
+#
+setopt appendhistory autocd extendedglob nomatch
+bindkey -v
+
+# add this configuration to ~/.zshrc
+export HISTFILE=~/.zsh_history  # ensure history file visibility
+export HH_CONFIG=hicolor        # get more colors
+bindkey -s "\C-r" "\eqhh\n"     # bind hh to Ctrl-r (for Vi mode check doc)
+
+#this is being used by i3, see "man i3-sensible-terminal"
+export TERMINAL=termite
 
