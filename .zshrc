@@ -81,7 +81,6 @@ export PATH=/usr/local/texlive/2013/bin/x86_64-linux/:$PATH
 #source /usr/bin/virtualenvwrapper.sh
 #
 setopt appendhistory autocd extendedglob nomatch
-bindkey -v
 
 # add this configuration to ~/.zshrc
 export HISTFILE=~/.zsh_history  # ensure history file visibility
