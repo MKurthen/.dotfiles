@@ -9,11 +9,11 @@ setxkbmap -variant nodeadkeys
 xrdb -merge ~/.Xresources
 
 #enable to start i3WM
-exec i3
+#exec i3
 
 #enable to start KDE
 #exec startkde
 
 #exec xfce4-session
-#exec cinnamon-session
+exec cinnamon-session
 
