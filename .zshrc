@@ -88,5 +88,5 @@ export HH_CONFIG=hicolor        # get more colors
 bindkey -s "\C-r" "\eqhh\n"     # bind hh to Ctrl-r (for Vi mode check doc)
 
 #this is being used by i3, see "man i3-sensible-terminal"
-export TERMINAL=termite
 
+export TERM=xterm-256color
