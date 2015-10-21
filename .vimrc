@@ -41,20 +41,51 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line"pathogen (see https://github.com/tpope/vim-pathogen )
-"execute pathogen#infect()
-"color
-colorscheme badwolf
-"syntax highlighting
-syntax on
-filetype plugin indent on
-set number
-"
+execute pathogen#infect()
+" 
+" misc
 "source working tree .vimrc, but secure c
 set exrc
 set secure
-
+" do not confit ycm_config loading
+let g:ycm_confirm_extra_conf = 0
+"color {{{
+colorscheme badwolf
 "Transparency
 hi Normal ctermbg=none
 highlight NonText ctermbg=none
-
+" }}}
+"
+" Spaces & Tabs {{{
+set tabstop=4           " 4 space tab
+set expandtab           " use spaces for tabs
+set softtabstop=4       " 4 space tab
+set shiftwidth=4
+set modelines=1 "modeline for file specific options
+filetype indent on
+filetype plugin on
+set autoindent
+" }}}
+"
+" UI Layout {{{
+set number              " show line numbers
+set showcmd             " show command in bottom bar
+set nocursorline          " highlight current line
+set wildmenu
+set lazyredraw
+set showmatch           " higlight matching parenthesis
+" }}}
+"
+" Searching {{{
+set ignorecase          " ignore case when searching
+set incsearch           " search as characters are entered
+set hlsearch            " highlight all matches
+" }}}
+"
+" Leader Shortcuts {{{
+let mapleader=","
+" disable highlighting 
+nnoremap <leader><space> :noh<CR>
+vnoremap <leader>y "+y
+" }}}
 

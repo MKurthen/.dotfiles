@@ -90,3 +90,6 @@ bindkey -s "\C-r" "\eqhh\n"     # bind hh to Ctrl-r (for Vi mode check doc)
 #this is being used by i3, see "man i3-sensible-terminal"
 
 export TERM=xterm-256color
+
+#no beeps
+setopt NO_BEEP
