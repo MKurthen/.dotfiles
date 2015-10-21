@@ -42,6 +42,8 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line"pathogen (see https://github.com/tpope/vim-pathogen )
 execute pathogen#infect()
+"
+" 
 " 
 " misc
 "source working tree .vimrc, but secure c
@@ -49,6 +51,11 @@ set exrc
 set secure
 " do not confit ycm_config loading
 let g:ycm_confirm_extra_conf = 0
+"disable beep completely
+set noerrorbells
+set visualbell
+set t_vb=
+
 "color {{{
 colorscheme badwolf
 "Transparency

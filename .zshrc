@@ -74,6 +74,8 @@ export PATH=$HOME/bin:/usr/local/bin:usr/bin:/bin:$PATH
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 export PATH=/usr/local/texlive/2013/bin/x86_64-linux/:$PATH
 
+#editor
+export EDITOR=vim
 
 ##Variables for Virtualenvwrapper (Python)
 #export WORKON_HOME=$HOME/.virtualenvs
@@ -88,8 +90,8 @@ export HH_CONFIG=hicolor        # get more colors
 bindkey -s "\C-r" "\eqhh\n"     # bind hh to Ctrl-r (for Vi mode check doc)
 
 #this is being used by i3, see "man i3-sensible-terminal"
-
 export TERM=xterm-256color
 
 #no beeps
 setopt NO_BEEP
+
