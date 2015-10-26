@@ -78,9 +78,9 @@ export PATH=/usr/local/texlive/2013/bin/x86_64-linux/:$PATH
 export EDITOR=vim
 
 ##Variables for Virtualenvwrapper (Python)
-#export WORKON_HOME=$HOME/.virtualenvs
-#export PROJECT_HOME=$HOME/Devel
-#source /usr/bin/virtualenvwrapper.sh
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+source /usr/bin/virtualenvwrapper.sh
 #
 setopt appendhistory autocd extendedglob nomatch
 
@@ -94,4 +94,7 @@ export TERM=xterm-256color
 
 #no beeps
 setopt NO_BEEP
+
+#pygmentize alias
+alias pyg="pygmentize"
 

@@ -15,8 +15,8 @@ set $mod Mod4
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
-#font pango:Cantarell Bold 10
+#font pango:DejaVu Sans Mono 8
+font pango:Cantarell Bold 10
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -91,6 +91,19 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+
+# customize workspace names
+set $WS1 1:
+set $WS2 2:
+set $WS3 3:
+set $WS4 4:
+set $WS5 5:
+set $WS6 6:
+set $WS7 7:
+set $WS8 8:
+set $WS9 9:
+set $WS10 10:
+
 # switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
@@ -151,9 +164,27 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
-        tray_output primary
+        status_command conky -c $HOME/.conkyrc
+	mode dock
+	position bottom
+	font pango:open sans 12
+	strip_workspace_numbers no
+colors {
+        background #F1F2F6
+        statusline #788491
+        separator #51c4d4
+
+        focused_workspace  #F1F2F6 #F1F2F6 #4FC0E8
+        active_workspace   #F1F2F6 #F1F2F6 #4FC0E8
+        inactive_workspace #F1F2F6 #F1F2F6 #C1D1E0
+        urgent_workspace   #F1F2F6 #F1F2F6 #C1D1E0
+    }
 }
+
+#bar {
+#        status_command i3status
+#        tray_output primary
+#}
 
 ##### user defined stuff ####
 #transparency : xcompmgr
@@ -166,6 +197,7 @@ bindsym $mod+o exec "bash ~/lock"
 exec "feh --bg-scale ~/Copy/scenery_pics/02067_fallenleaf_1680x1050.jpg"
 
 #sound 
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 -- +10% && killall -SIGUSR1 i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -- -10% && killall -SIGUSR1 i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-volume 0 -- -100% && killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0  +10% && killall -SIGUSR1 i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0  -10% && killall -SIGUSR1 i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle  && killall -SIGUSR1 i3status
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-volume 0 -- -100% && killall -SIGUSR1 i3status

@@ -1,0 +1,17 @@
+background no
+out_to_x no
+out_to_console yes
+update_interval 1
+total_run_times 0
+use_spacer none
+
+
+TEXT
+${if_mpd_playing}${mpd_artist}   ${mpd_title}${endif}     \
+   ${downspeedf wlp3s0} | ${upspeedf wlp3s0}     \
+   ${wireless_link_qual_perc wlp3s0}  ${wireless_essid wlp3s0}     \
+   ${hwmon 2 temp 1} | ${hwmon 2 temp 3}     \
+#pulseaudio volume parser: information is in line with "Volume: front", however 2 times given, so the head pipe, also it given as 91%, 101%, etc. so the sed command
+   ${exec pactl list sinks | grep "Volume: front" | grep -oE "[[:digit:]]*%" | head -n1 | sed  's/1%/0%/g'}     \
+   ${time %a %b %d}     \
+   ${time %H:%M}   
