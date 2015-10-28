@@ -28,6 +28,7 @@ Plugin 'VundleVim/Vundle.vim'
 "Plugin 'user/L9', {'name': 'newL9'}
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'sjl/badwolf'
+Plugin 'bling/vim-airline'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -84,6 +85,7 @@ set nocursorline          " highlight current line
 set wildmenu
 set lazyredraw
 set showmatch           " higlight matching parenthesis
+set laststatus=2        " shows airline instead of default-statusline all the time
 " }}}
 "
 " Searching {{{
