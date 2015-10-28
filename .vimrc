@@ -1,4 +1,4 @@
-""" Vundle stuff, copied from https://github.com/vundlevim/vundle.vim#about
+"""s_" Vundle stuff, copied from https://github.com/vundlevim/vundle.vim#about
 set nocompatible " be iMproved, required
 filetype off  " required
  
@@ -6,7 +6,7 @@ filetype off  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
-call vundle#begin('~/some/path/here')
+call vundle#begin('~/.vundle_managed_vim_plugins')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -26,6 +26,8 @@ Plugin 'VundleVim/Vundle.vim'
 "Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Avoid a name conflict with L9
 "Plugin 'user/L9', {'name': 'newL9'}
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'sjl/badwolf'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -41,7 +43,7 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line"pathogen (see https://github.com/tpope/vim-pathogen )
-execute pathogen#infect()
+"execute pathogen#infect()
 "
 " 
 " 
