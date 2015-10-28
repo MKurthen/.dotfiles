@@ -60,6 +60,7 @@ set t_vb=
 
 "color {{{
 colorscheme badwolf
+syntax on
 "Transparency
 hi Normal ctermbg=none
 highlight NonText ctermbg=none
