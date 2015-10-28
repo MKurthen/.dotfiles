@@ -1,17 +1,35 @@
 background no
 out_to_x no
 out_to_console yes
-update_interval 1
+update_interval 0.5
 total_run_times 0
 use_spacer none
 
 
 TEXT
-${if_mpd_playing}${mpd_artist}   ${mpd_title}${endif}     \
-   ${downspeedf wlp3s0} | ${upspeedf wlp3s0}     \
-   ${wireless_link_qual_perc wlp3s0}  ${wireless_essid wlp3s0}     \
-   ${hwmon 2 temp 1} | ${hwmon 2 temp 3}     \
+kernel ${kernel}\
+   ${downspeedf wlp3s0}  ${upspeedf wlp3s0}\
+    ${wireless_link_qual_perc wlp3s0}  ${wireless_essid wlp3s0}\
+    ${hwmon 2 temp 1} / ${hwmon 2 temp 3}\
+  CPU: ${cpu}%\
+  mem: ${mem}\
+#audio
+${if_match "${exec pactl list sinks| grep -o 'Mute: yes'}"!=""}\
+            \
+${else}\
 #pulseaudio volume parser: information is in line with "Volume: front", however 2 times given, so the head pipe, also it given as 91%, 101%, etc. so the sed command
-   ${exec pactl list sinks | grep "Volume: front" | grep -oE "[[:digit:]]*%" | head -n1 | sed  's/1%/0%/g'}     \
-   ${time %a %b %d}     \
-   ${time %H:%M}   
+    ${exec pactl list sinks | grep "Volume: front" | grep -oE "[[:digit:]]*%" | head -n1 | sed  's/1%/0%/g'}\
+${endif}\
+#
+# Battery informatin
+${if_match "${acpiacadapter}"=="off-line"}\
+     ${battery_percent}%\
+${else}\
+   \
+${endif} \
+#
+# Date & time
+    ${time %a %b %d}\
+    ${time %H:%M}\
+ 
+
