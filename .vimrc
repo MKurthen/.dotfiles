@@ -52,13 +52,18 @@ filetype plugin indent on    " required
 "source working tree .vimrc, but secure c
 set exrc
 set secure
-" do not confit ycm_config loading
+"
+" do not confirm ycm_config loading
 let g:ycm_confirm_extra_conf = 0
+"
 "disable beep completely
 set noerrorbells
 set visualbell
 set t_vb=
-
+"
+"show airline all the time
+set laststatus=2
+"
 "color {{{
 colorscheme badwolf
 syntax on
@@ -69,9 +74,9 @@ highlight NonText ctermbg=none
 "
 " Spaces & Tabs {{{
 set tabstop=4           " 4 space tab
-set expandtab           " use spaces for tabs
 set softtabstop=4       " 4 space tab
 set shiftwidth=4
+set expandtab           " use spaces for tabs
 set modelines=1 "modeline for file specific options
 filetype indent on
 filetype plugin on

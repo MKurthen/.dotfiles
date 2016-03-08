@@ -83,10 +83,10 @@ export PATH=$HOME/Source/montage/bin/:$PATH
 #editor
 export EDITOR=vim
 
-##Variables for Virtualenvwrapper (Python)
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
-source /usr/bin/virtualenvwrapper.sh
+# ##Variables for Virtualenvwrapper (Python)
+# export WORKON_HOME=$HOME/.virtualenvs
+# export PROJECT_HOME=$HOME/Devel
+# source /usr/bin/virtualenvwrapper.sh
 #
 setopt appendhistory autocd extendedglob nomatch
 
