@@ -1,7 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/home/ubuntu/.dotfiles/.vim'
 let g:netrw_dirhist_2='/home/ubuntu/ipe/ipe/feature_extraction/build'
 let g:netrw_dirhist_3='/home/ubuntu/source/opencv/build'
 let g:netrw_dirhist_4='/home/ubuntu/ipe/ipe/feature_extraction/pyboostcvconverter/build'
 let g:netrw_dirhist_5='/home/max/stuff/MKurthen.github.io/blog/static/css'
+let g:netrw_dirhist_6='/home/ubuntu/ipe/ipe/pyIPEPV_test'
