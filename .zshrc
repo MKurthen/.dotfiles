@@ -54,6 +54,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+HISTSIZE=100000
+SAVEHIST=100000
+
 export PATH=$HOME/bin:/usr/local/bin:usr/bin:/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
