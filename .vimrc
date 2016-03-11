@@ -29,6 +29,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'sjl/badwolf'
 Plugin 'bling/vim-airline'
+Plugin 'altercation/Vim-colors-solarized'
+Plugin 'morhetz/gruvbox'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -66,6 +68,9 @@ set laststatus=2
 "
 "color {{{
 colorscheme badwolf
+colorscheme solarized
+colorscheme gruvbox
+set background=dark
 syntax on
 "Transparency
 hi Normal ctermbg=none

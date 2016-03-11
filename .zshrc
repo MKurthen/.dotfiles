@@ -98,3 +98,5 @@ setopt NO_BEEP
 #pygmentize alias
 alias pyg="pygmentize"
 
+# added by Anaconda3 2.5.0 installer
+export PATH="/home/ubuntu/ipe/anaconda3/bin:$PATH"
