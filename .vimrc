@@ -26,11 +26,11 @@ Plugin 'VundleVim/Vundle.vim'
 "Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Avoid a name conflict with L9
 "Plugin 'user/L9', {'name': 'newL9'}
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'sjl/badwolf'
-Plugin 'bling/vim-airline'
-Plugin 'altercation/Vim-colors-solarized'
-Plugin 'morhetz/gruvbox'
+Plugin 'Valloric/YouCompleteMe' " autocompletion etc.
+Plugin 'bling/vim-airline' "status line
+Plugin 'sjl/badwolf' "colorscheme
+Plugin 'altercation/Vim-colors-solarized' "colorscheme
+Plugin 'morhetz/gruvbox' "colorscheme
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
