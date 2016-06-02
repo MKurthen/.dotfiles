@@ -68,7 +68,7 @@ set laststatus=2
 "
 "color {{{
 colorscheme badwolf
-colorscheme solarized
+:olorscheme solarized
 colorscheme gruvbox
 set background=dark
 syntax on
@@ -90,6 +90,7 @@ set autoindent
 "
 " UI Layout {{{
 set number              " show line numbers
+set relativenumber      " show relative (to the current line) line numbers
 set showcmd             " show command in bottom bar
 set nocursorline          " highlight current line
 set wildmenu
