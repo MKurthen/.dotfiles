@@ -27,6 +27,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Avoid a name conflict with L9
 "Plugin 'user/L9', {'name': 'newL9'}
 Plugin 'Valloric/YouCompleteMe' " autocompletion etc.
+Plugin 'scrooloose/syntastic' " syntax checking
 Plugin 'bling/vim-airline' "status line
 Plugin 'sjl/badwolf' "colorscheme
 Plugin 'altercation/Vim-colors-solarized' "colorscheme
@@ -68,7 +69,7 @@ set laststatus=2
 "
 "color {{{
 colorscheme badwolf
-:olorscheme solarized
+colorscheme solarized
 colorscheme gruvbox
 set background=dark
 syntax on
@@ -112,3 +113,13 @@ nnoremap <leader><space> :noh<CR>
 vnoremap <leader>y "+y
 " }}}
 
+" Syntastic {{{
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+" }}}

@@ -197,6 +197,8 @@ bindsym $mod+o exec "bash ~/lock"
 #exec feh --bg-scale ~/Copy/scenery_pics/04003_endofthesunrise_1600x900.jpg
 exec ipython3 /home/max/Source/scripts/change_wallpaper_every_interval.py
 
+bindsym $mod+p exec /home/max/Source/scripts/remove_current_wallpaper_from_cycle.py
+
 #sound 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0  +10% && killall -SIGUSR1 i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0  -10% && killall -SIGUSR1 i3status
