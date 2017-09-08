@@ -81,7 +81,7 @@ highlight NonText ctermbg=none
 " Spaces & Tabs {{{
 set tabstop=4           " 4 space tab
 set softtabstop=4       " 4 space tab
-set shiftwidth=4
+set shiftwidth=2
 set expandtab           " use spaces for tabs
 set modelines=1 "modeline for file specific options
 filetype indent on
