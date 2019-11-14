@@ -26,12 +26,24 @@ Plugin 'VundleVim/Vundle.vim'
 "Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Avoid a name conflict with L9
 "Plugin 'user/L9', {'name': 'newL9'}
-Plugin 'Valloric/YouCompleteMe' " autocompletion etc.
-Plugin 'scrooloose/syntastic' " syntax checking
+"""autocompletion
+"Plugin 'Valloric/YouCompleteMe' " autocompletion etc.
+"Plugin 'scrooloose/syntastic' " syntax checking
+Plugin 'ajh17/VimCompletesMe' "autocompletion
+Plugin 'prabirshrestha/async.vim' " language server protocoll
+"Plugin 'prabirshrestha/vim-lsp' " language server protocoll
+
+""" Status Line
 Plugin 'bling/vim-airline' "status line
+
+""" Color Scheme
+Plugin 'morhetz/gruvbox' "colorscheme
 Plugin 'sjl/badwolf' "colorscheme
 Plugin 'altercation/Vim-colors-solarized' "colorscheme
-Plugin 'morhetz/gruvbox' "colorscheme
+
+""" Misc
+Plugin 'Yggdroot/indentLine' "indent markers
+Plugin 'junegunn/fzf.vim' "fuzzy file search
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -114,12 +126,23 @@ vnoremap <leader>y "+y
 " }}}
 
 " Syntastic {{{
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" 
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 0
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" " }}}
+if executable('pyls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'whitelist': ['python'],
+        \ })
+endif
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-" }}}
+
+" Disable ctrl c mapping for sql files
+let g:ftplugin_sql_omni_key = '<C-j>'
