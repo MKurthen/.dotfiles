@@ -1,15 +1,21 @@
-"""s_" Vundle stuff, copied from https://github.com/vundlevim/vundle.vim#about
-set nocompatible " be iMproved, required
-filetype off  " required
- 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-call vundle#begin('~/.vundle_managed_vim_plugins')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+      autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    endif
+call plug#begin('~/.vim/plugged')
+" "s_" Vundle stuff, copied from https://github.com/vundlevim/vundle.vim#about
+" set nocompatible " be iMproved, required
+" filetype off  " required
+"  
+" " set the runtime path to include Vundle and initialize
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
+" " alternatively, pass a path where Vundle should install plugins
+" call vundle#begin('~/.vundle_managed_vim_plugins')
+" 
+" " let Vundle manage Vundle, required
+" Plugin 'VundleVim/Vundle.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -28,26 +34,31 @@ Plugin 'VundleVim/Vundle.vim'
 "Plugin 'user/L9', {'name': 'newL9'}
 """autocompletion
 "Plugin 'Valloric/YouCompleteMe' " autocompletion etc.
-"Plugin 'scrooloose/syntastic' " syntax checking
-Plugin 'ajh17/VimCompletesMe' "autocompletion
-Plugin 'prabirshrestha/async.vim' " language server protocoll
+"Plug 'scrooloose/syntastic' " syntax checking
+""Plugin 'ajh17/VimCompletesMe' "autocompletion
+"Plugin 'dense-analysis/ale'
+""Plugin 'prabirshrestha/async.vim' " language server protocoll
 "Plugin 'prabirshrestha/vim-lsp' " language server protocoll
+"Plugin 'numirias/semshi'
+Plug 'neoclide/coc.nvim',   {'branch': 'release'}
+"{'do': 'yarn install --frozen-lockfile'}
 
 """ Status Line
-Plugin 'bling/vim-airline' "status line
+Plug 'bling/vim-airline' "status line
 
 """ Color Scheme
-Plugin 'morhetz/gruvbox' "colorscheme
-Plugin 'sjl/badwolf' "colorscheme
-Plugin 'altercation/Vim-colors-solarized' "colorscheme
+Plug 'morhetz/gruvbox' "colorscheme
+Plug 'sjl/badwolf' "colorscheme
+Plug 'altercation/Vim-colors-solarized' "colorscheme
 
 """ Misc
-Plugin 'Yggdroot/indentLine' "indent markers
-Plugin 'junegunn/fzf.vim' "fuzzy file search
+""" Plug 'Yggdroot/indentLine' "indent markers
+Plug 'junegunn/fzf.vim' "fuzzy file search
 
+call plug#end()
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+"call vundle#end()            " required
+"filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -146,3 +157,7 @@ endif
 
 " Disable ctrl c mapping for sql files
 let g:ftplugin_sql_omni_key = '<C-j>'
+
+" show json '"' marks - actually this is default but some plugin here
+" overrides it
+set conceallevel=0
